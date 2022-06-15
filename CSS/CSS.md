@@ -31,3 +31,5 @@ p::first-letter {font-size: 30px;}
 a:hover {color: #FF00FF}
 p:first-child {color: red}
 ```
+
+### [3. 自适应布局和响应式布局的区别](https://zhuanlan.zhihu.com/p/157443159)

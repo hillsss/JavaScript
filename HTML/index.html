@@ -12,12 +12,42 @@
         html{
             background-color: aqua;
         }
+        .out{
+            display: flex;
+            background:red;
+            width:100px;
+            height: 100px;
+        }
+        .in{
+            margin: auto;
+            background:yellow;
+            width:10px;
+            height: 100px;
+        }
     </style>
 </head>
 
 <body>
-    <script>
-        console.log(123123)
+    <div class="out">
+        <div class="in"></div>
+    </div>
+    <button id='btn'>按钮</button>
+    <script type="text/javascript">
+    function debounce(fn, delay) {
+        // 记录上一次的延时器
+        var timer = null;
+        return function() {
+            // 清除上一次延时器
+            console.log(timer,3);
+            clearTimeout(timer)
+            timer = setTimeout(function() {
+                fn.apply(this)
+            }, delay)
+        }
+    }
+    document.getElementById('btn').onclick = debounce(function() {
+        console.log('点击事件被触发' + Date.now())
+    }, 1000)
     </script>
 
 </body>
